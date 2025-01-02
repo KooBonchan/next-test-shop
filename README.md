@@ -33,7 +33,7 @@ write date: 2025-01-02
 - User
   - idx, username, password, email, regDate, role
 - Item
-  - idx, title, imgUrl, shortDesc, longDesc nullable, price int, regDate date, stock int, provider -> user
+  - idx, name, imgUrl, shortDesc, longDesc nullable, price int, regDate date, stock int, provider -> user
 - Purchase
   - idx, purchaseDate, buyer -> user, amount, canceled
 - PurchaseItem

@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Delius_Swash_Caps, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+import { config } from "@fortawesome/fontawesome-svg-core";
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import Link from "next/link";
+import Cart from "./component/cart";
+config.autoAddCss = false;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +16,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const deliusSwashCaps = Delius_Swash_Caps({
+  variable: "--font-delius-swash-caps",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -24,9 +36,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${deliusSwashCaps.variable} ${geistMono.variable}`}>
+      <NavBar />
         {children}
       </body>
     </html>
+  );
+}
+
+
+function NavBar(){
+  return (
+    <nav>
+      <Link href="/" key="logo">Logo</Link>
+      <Link href="/" key="home">Home</Link>
+      <Link href="/login" key="login">Login</Link>
+      <Cart />
+    </nav>
   );
 }
