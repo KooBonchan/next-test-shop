@@ -1,7 +1,10 @@
 import { delay } from "@/util/timeUtil";
 import { placeholderReply } from "../placeholder";
 
-export async function GET({params}: {params: Promise<{idx: number, replyIdx: number}>}) {
+export async function GET(
+  request: Request,
+  {params}: {params: Promise<{idx: number, replyIdx: number}>}
+) {
   const { idx, replyIdx } = await params;
   console.log('api(GET reply) called')
   const response = await delay(1000).then(()=>placeholderReply[0]);
