@@ -2,6 +2,7 @@ import ItemDto from "@/model/ItemDto";
 import { delay } from "@/util/timeUtil";
 import Image from "next/image";
 import AddToCart from "./component/AddToCart";
+import styles from "./page.module.css";
 
 const placeholder : ItemDto = {
   idx: -1,
@@ -34,12 +35,16 @@ export default async function item(
     };
     return (
       <>
-        <Image alt={item.name} src={item.baseImgUrl}
-          width={200} height={200}/>
-        <h2>{item.name}</h2>
-        <p>{item.longDesc}</p>
-        <p>{item.price}</p>
-        <AddToCart itemIdx={item.idx} />
+        <div className={styles["item-name"]}>{item.name}</div>
+        <div className={styles["item-content-wrapper"]}>
+          <Image alt={item.name} src={item.baseImgUrl}
+            width={200} height={200}/>
+          <div>
+            <p>{item.longDesc}</p>
+            <p>Price: {item.price}</p>
+            <AddToCart itemIdx={item.idx} price={item.price}/>  
+          </div>
+        </div>
       </>
     );
   } catch(e) {

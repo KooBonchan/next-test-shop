@@ -7,7 +7,6 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import NavBar from "./component/NavBar";
 config.autoAddCss = false;
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -36,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${deliusSwashCaps.variable} ${geistMono.variable}`}>
+      <body className={`${deliusSwashCaps.className} ${geistMono.className} ${geistSans.className}`}>
         <NavBar />
         {children}
       </body>
