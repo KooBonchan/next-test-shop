@@ -14,7 +14,7 @@ export default function ItemCard(
   const [messageClass , setMessageClass] = useState<string>('');
   const handleAddToCart = useCallback(() => {
     setIsAdding(true);
-    fetch('/api/add-to-cart', {
+    fetch('/api/cart', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

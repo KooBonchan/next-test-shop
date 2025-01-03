@@ -3,11 +3,11 @@ import { Delius_Swash_Caps, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import Link from "next/link";
-import Cart from "./component/cart";
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import NavBar from "./component/NavBar";
 config.autoAddCss = false;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${deliusSwashCaps.variable} ${geistMono.variable}`}>
-      <NavBar />
+        <NavBar />
         {children}
       </body>
     </html>
@@ -45,13 +45,3 @@ export default function RootLayout({
 }
 
 
-function NavBar(){
-  return (
-    <nav>
-      <Link href="/" key="logo">Logo</Link>
-      <Link href="/" key="home">Home</Link>
-      <Link href="/login" key="login">Login</Link>
-      <Cart />
-    </nav>
-  );
-}

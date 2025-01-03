@@ -3,7 +3,7 @@
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Cart(){
+export default function CartIcon(){
   return (
     <>
       <FontAwesomeIcon icon={faCoffee}/>
