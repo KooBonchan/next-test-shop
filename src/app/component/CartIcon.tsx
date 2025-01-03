@@ -1,13 +1,13 @@
 'use client';
 
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function CartIcon(){
   return (
-    <>
-      <FontAwesomeIcon icon={faCoffee}/>
-      {}
-    </>
+    <div style={{fontSize:'2rem'}}>
+      <FontAwesomeIcon icon={faCartShopping}/>
+      13
+    </div>
   );
 }

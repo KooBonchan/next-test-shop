@@ -1,0 +1,26 @@
+.header{
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-wrapper, .right-wrapper{
+  display:flex;
+  width: 50%;
+  width: fit-content;
+  gap: 1rem;
+  align-items: center;
+}
+.logo{
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  border: 1px solid #99f;
+  padding: 0.5rem;
+}
+.route{
+  font-size: 1.2rem;
+}
+.route:hover{
+  color: #99f;
+}
