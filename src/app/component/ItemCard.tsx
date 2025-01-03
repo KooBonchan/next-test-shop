@@ -4,13 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 import styles from "./ItemCard.module.css";
+import { delay } from "@/util/timeUtil";
 
 export default function ItemCard(
   {id, title, thumbnail, shortDesc, price} :
   {id: number, title:string, thumbnail: string, shortDesc:string, price: number}
 ) {
   const [isAdding, setIsAdding] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
+  const [messageClass , setMessageClass] = useState<string>('');
   const handleAddToCart = useCallback(() => {
     setIsAdding(true);
     fetch('/api/add-to-cart', {
@@ -20,11 +21,15 @@ export default function ItemCard(
       },
       body: JSON.stringify({id, quantity:1})
     })
-    .then(response => response.status)
-    .then(()=> setShowSuccess(true))
-    .then(()=> new Promise(resolve => setTimeout(() => resolve(true), 2000)))
-    .then(()=> setShowSuccess(false))
-    .finally(() => setIsAdding(false));
+      .then(response => {if(!response.ok) throw new Error('Failed to add to cart')})
+      .then(()=> setMessageClass(styles.success))
+      .catch(()=> setMessageClass(styles.failure))
+      .finally()
+        .then(()=> delay(2000))
+        .then(()=> setMessageClass(styles.fadeOut))
+        .then(()=> delay(1000))
+        .then(()=> setMessageClass(''))
+        .then(()=> setIsAdding(false));
   }, [id]);
 
   return (
@@ -33,12 +38,19 @@ export default function ItemCard(
         <Image alt={title} src={thumbnail} width={200} height={200}/>
       </Link>
       <div>{title}</div>
-      <div className={`${styles.messageWrapper} ${showSuccess && styles.success}`}>
+      <div className={styles.messageWrapper}>
         <div>{shortDesc}</div>
         <div>{price}</div>
         <button onClick={handleAddToCart} disabled={isAdding}>Add To Cart</button>
-        <div className={`${styles.successMessage} ${showSuccess && styles.success}`}>
+        <div className={`${styles.message}
+          ${messageClass !== styles.failure &&
+            messageClass}`}>
           Added to cart!
+        </div>
+        <div className={`${styles.message}
+          ${messageClass !== styles.success &&
+            messageClass}`}>
+          Failed..? Retry!
         </div>
       </div>
     </div>
