@@ -1,0 +1,28 @@
+.form-login{
+  margin: 2rem auto;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0 1rem;
+  font-size: 1.2rem;
+  align-items: center;
+}
+
+.form-login input{
+  margin: 0.5rem 0;
+  border: none;
+  height: 2rem;
+  line-height: 2rem;
+  font-size:1rem;
+  padding-left:5px;
+  background-color: #333;
+}
+.form-button{
+  grid-column: span 2;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  font-family: var(--font-delius-swash-caps);
+  margin: 5px 0;
+  border:none;
+}

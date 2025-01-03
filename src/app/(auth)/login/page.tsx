@@ -1,21 +1,21 @@
 'use client';
+import styles from './page.module.css';
+
 export default function Login(){
   const handleLogin = async (e: FormData) => {
-    console.log("Server tries to login");
-    console.log(e.get("username"));
+    console.log("Client tries to login");
+    console.log("Internal Server Request occurred: ",e.get("username"));
   }
   return (
     <>
-    <form action={handleLogin}>
-      <div>
+    <form action={handleLogin} className={styles['form-login']}>
+      
       <label about="username">Username: </label>
       <input type="text" id="username" name="username" required/>
-      </div>
-      <div>
       <label about="username">Password: </label>
       <input type="password" id="password" name="password" required/>
-      </div>
-      <button>Login</button>
+      <button className={styles['form-button']}>Login</button>
+      <button type='button' className={styles['form-button']}>signup</button>
     </form>
     </>
   );

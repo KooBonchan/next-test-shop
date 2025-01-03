@@ -1,0 +1,18 @@
+.cart-icon-wrapper{
+  position:relative;
+
+}
+.cart-item-count{
+  position:absolute;
+  top:-7px;
+  left: calc(60% - 15px);
+  font-size:16px;
+  line-height:30px;
+  width:30px;
+  height:30px;
+  border-radius:15px;
+  text-align: center;
+  background-color: var(--background);
+  border: 2px solid var(--foreground);
+  
+}
