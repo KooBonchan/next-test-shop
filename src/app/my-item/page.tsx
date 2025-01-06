@@ -1,3 +1,7 @@
 export default function MyItemPage() {
-  return (<>MY ITEM</>);
+  return (
+  <>
+  MY ITEM
+  </>
+  );
 }
