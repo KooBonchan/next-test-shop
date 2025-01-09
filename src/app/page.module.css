@@ -6,7 +6,7 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
   /* min-height: 100svh; */
-  font-family: var(--font-delius-swash-caps);
+  /* font-family: var(--font-delius-swash-caps); */
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,4 +1,4 @@
-import ItemDto from "@/model/itemDto";
+import ItemDto from "@/model/ItemDto";
 
 const placeholderCart: ItemDto[] = [
   {

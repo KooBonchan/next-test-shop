@@ -20,6 +20,7 @@ create table item(
   baseImgUrl varchar(70) not null,
   shortDesc varchar(200) not null,
   longDesc varchar(2000) null,
+  originalPrice int default 0,
   price int not null,
   regDate date default (curdate()),
   stock int not null default 0,

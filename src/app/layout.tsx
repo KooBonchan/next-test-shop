@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${deliusSwashCaps.className} ${geistMono.className} ${geistSans.className}`}>
+      <body className={`${geistMono.className} ${deliusSwashCaps.className}  ${geistSans.className}`}>
         <NavBar />
         {children}
       </body>
