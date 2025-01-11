@@ -69,3 +69,8 @@ write date: 2025-01-02
 Client Component - Server API/Router - DB Server - MySQL
 
 ### Reference
+
+
+https://next-auth-example.vercel.app/
+https://github.com/nextauthjs/next-auth-example
+https://github.com/nextauthjs/next-auth-example
