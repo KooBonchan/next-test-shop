@@ -33,15 +33,15 @@ export default function ItemCard(
   }, [id]);
 
   return (
-    <div>
+    <div className={styles['card-wrapper']}>
       <Link href={'/'+id}>
-        <Image alt={title} src={thumbnail} width={200} height={200}/>
+        <Image className={styles['image']} alt={title} src={thumbnail} width={200} height={200}/>
       </Link>
-      <div>{title}</div>
+      <div className={styles['title']}>{title}</div>
       <div className={styles.messageWrapper}>
-        <div>{shortDesc}</div>
-        <div>{price}</div>
-        <button onClick={handleAddToCart} disabled={isAdding}>Add To Cart</button>
+        <div className={styles['short-description']}>{shortDesc}</div>
+        <div className={styles['price']}>{price}</div>
+        <button className={styles['button']} onClick={handleAddToCart} disabled={isAdding}>Add To Cart</button>
         <div className={`${styles.message}
           ${messageClass !== styles.failure &&
             messageClass}`}>

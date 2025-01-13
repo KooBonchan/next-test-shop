@@ -2,7 +2,6 @@
   position: relative;
   margin:0 auto;
 }
-
 .message{
   position: absolute;
   top:0;
@@ -16,21 +15,94 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0s;
+  border-radius: 5px;
 }
 .message.success{
   opacity: 1;
   left:0;
   visibility: visible;
-  background-color: green;
+  background-color: #27ae60;
 }
 .message.failure{
   opacity: 1;
   left:0;
   visibility: visible;
-  background-color: red;
+  background-color: #e74c3c;
 }
 .message.fadeOut {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; /* Visibility change after opacity */
+}
+
+
+
+.card-wrapper {
+  border-radius: 10px; /* Rounded corners */
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  color: #fff; /* White text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  border: 4px solid #0b6351;
+}
+.card-wrapper:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Increased shadow for hover */
+  border: 4px solid #00b894;
+}
+
+
+.image {
+  border-radius: 8px; /* Rounded corners for image */
+  width: 100%;
+  object-fit: cover; /* Ensure the image maintains aspect ratio */
+}
+/* Title Styling */
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  color: #fff; /* White text for the title */
+}
+
+/* Short description styling */
+.short-description {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #bbb; /* Light gray text for description */
+}
+
+/* Price styling */
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e5e5e5; /* Light gray text for price */
+}
+
+/* Button styling */
+.button {
+  background-color: #00b894; /* Bright color for call-to-action */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Button hover effect */
+.button:hover {
+  background-color: #098e73; /* Darker shade of green on hover */
+}
+
+/* Disabled button styling */
+.button:disabled {
+  background-color: #444; /* Disabled state background */
+  cursor: not-allowed;
 }
